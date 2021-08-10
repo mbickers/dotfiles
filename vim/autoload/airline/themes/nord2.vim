@@ -1,10 +1,7 @@
-" Copyright (C) 2016-present Arctic Ice Studio <development@arcticicestudio.com>
-" Copyright (C) 2016-present Sven Greb <development@svengreb.de>
-
+" Adapted from:
 " Project: Nord Vim
 " Repository: https://github.com/arcticicestudio/nord-vim
 " License: MIT
-
 
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''

@@ -1,0 +1,7 @@
+[user]
+	email = mbickers@umich.edu
+	name = Max Bickers
+[init]
+	defaultBranch = main
+[core]
+	excludesfile = /Users/maxbickers/.gitignore

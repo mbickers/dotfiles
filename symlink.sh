@@ -48,7 +48,6 @@ links=(
 # Remove symlinks
 if [[ $remove -eq 1 ]]; then
     for entry in "${links[@]}"; do
-        source_file="${entry%%:*}"
         link_name="${entry#*:}"
         expanded_link_name="${link_name/#\~/$HOME}"
         if [[ -L $expanded_link_name ]]; then

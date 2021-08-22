@@ -26,10 +26,6 @@ set autoindent
 "Start scrolling before hitting top/bottom of screen
 set scrolloff=10
 
-"Theme and appearance
-colorscheme nord
-set cursorline
-
 "Import plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
@@ -48,6 +44,10 @@ Plug 'lervag/vimtex'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
+
+"Theme and appearance
+colorscheme nord
+set cursorline
 
 "Customize lightline
 let g:lightline = {

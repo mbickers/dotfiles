@@ -6,9 +6,7 @@
 set nocompatible
 set hidden
 set updatetime=250
-
 set ignorecase
-
 set noswapfile
 
 "Config open/reload
@@ -19,14 +17,18 @@ nnoremap <Leader>r :so $MYVIMRC<CR>
 set number
 set relativenumber
 
-"Intelligent tab settings
+"Tab settings
 set tabstop=4
 set expandtab
 set shiftwidth=4
 set autoindent
 
-"Start scrolling before hitting top of screen
+"Start scrolling before hitting top/bottom of screen
 set scrolloff=10
+
+"Theme and appearance
+colorscheme nord
+set cursorline
 
 "Import plugins
 call plug#begin('~/.local/share/nvim/plugged')
@@ -46,10 +48,6 @@ Plug 'lervag/vimtex'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 
 call plug#end()
-
-"Theme and appearance
-colorscheme nord
-set cursorline
 
 "Customize lightline
 let g:lightline = {
@@ -116,9 +114,3 @@ let NERDTreeDirArrows = 1
 " Adjust vertical split
 highlight StatusLine ctermbg = none
 highlight StatusLineNC ctermbg = none
-
-"Latex setup
-let g:tex_flavor = "latex"
-
-autocmd FileType tex nmap <buffer> <C-T> :w \| silent !xelatex %<CR>
-autocmd FileType tex nmap <buffer> <C-G> :!open -a Skim %:r.pdf<CR><CR>

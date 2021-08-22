@@ -53,7 +53,7 @@ set cursorline
 let g:lightline = {
             \ 'active': {
             \   'left': [['mode'], ['filename', 'modified']],
-            \   'right': [['fileencoding', 'filetype']],
+            \   'right': [['fileinfo']],
             \ },
             \ 'inactive': {
             \   'left': [['filename']],
@@ -69,6 +69,7 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'filename': 'CustomFilename',
+            \   'fileinfo': 'CustomFileinfo',
             \ },
             \ 'tab_component_function': {
             \   'tabname': 'CustomTabname',
@@ -82,14 +83,25 @@ let g:lightline = {
 
 function! CustomFilename()
     let name = expand('%:t')
+    if name =~# 'NERD_tree'
+        return ''
+    endif
     return name != '' ? name : 'unnamed'
+endfunction
+
+function! CustomFileinfo()
+    let name = expand('%:t')
+    if name =~# 'NERD_tree'
+        return ''
+    endif
+    return (&fileencoding !=# '' ? &fileencoding : &encoding) . ' ' . &filetype
 endfunction
 
 function! CustomTabname(tab_num)
     let active_window_idx = tabpagewinnr(a:tab_num) - 1
     let active_buffer_idx = tabpagebuflist(a:tab_num)[active_window_idx]
     let name = bufname(active_buffer_idx)
-    return name != '' ? name : 'unnamed'
+    return name !=# '' ? name : 'unnamed'
 endfunction
 
 let s:palette = {

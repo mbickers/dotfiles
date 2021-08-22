@@ -35,7 +35,6 @@ fi
 links=(
     # Setup nvim
     "vim/init.vim:~/.config/nvim/init.vim"
-    "vim/nord2.vim:~/.config/nvim/autoload/airline/themes/nord2.vim"
     # Setup tmux
     "tmux/tmux.conf:~/.tmux.conf"
     # Setup git

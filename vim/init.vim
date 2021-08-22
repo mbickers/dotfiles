@@ -31,7 +31,7 @@ set scrolloff=10
 "Import plugins
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug 'vim-airline/vim-airline'
+Plug 'itchyny/lightline.vim'
 Plug 'preservim/nerdtree'
 
 Plug 'arcticicestudio/nord-vim'
@@ -51,67 +51,67 @@ call plug#end()
 colorscheme nord
 set cursorline
 
-"Customize tabline
-highlight TabLineFill ctermfg=none ctermbg=none
-highlight TabLine ctermfg=white ctermbg=black
-highlight TabLineSel ctermfg=black ctermbg=white
+"Customize lightline
+let g:lightline = {
+            \ 'active': {
+            \   'left': [['mode'], ['filename', 'modified']],
+            \   'right': [['fileencoding', 'filetype']],
+            \ },
+            \ 'inactive': {
+            \   'left': [['filename']],
+            \   'right': [],
+            \ },
+            \ 'tabline': {
+            \   'left': [['tabs']],
+            \   'right': [],
+            \ },
+            \ 'tab': {
+            \   'active': ['tabnum', 'tabname'],
+            \   'inactive': ['tabnum', 'tabname'],
+            \ },
+            \ 'component_function': {
+            \   'filename': 'CustomFilename',
+            \ },
+            \ 'tab_component_function': {
+            \   'tabname': 'CustomTabname',
+            \ },
+            \ 'colorscheme': 'nord_custom',
+            \ 'separator': {'left': '', 'right': ''},
+            \ 'subseparator': {'left': '', 'right': ''},
+            \ 'tabline_separator': {'left': '', 'right': ''},
+            \ 'tabline_subseparator': {'left': '', 'right': ''},
+            \ }
 
-function! CustomTabLine()
-    let s = ''
-
-    for i in range(tabpagenr('$'))
-        let tab = i + 1
-        let winnr = tabpagewinnr(tab)
-        let buflist = tabpagebuflist(tab)
-        let bufnr = buflist[winnr - 1]
-        let bufname = bufname(bufnr)
-        let bufmodified = getbufvar(bufnr, "&mod")
-
-        let s .= (tab == tabpagenr() ? '%#TabLineSel#' : '%#TabLine#')
-        let s .= ' ' . (bufname != '' ? fnamemodify(bufname, ':t') : 'unnamed') . ' '
-        let s .= "%#TabLineFill# "
-    endfor
-
-    let s .= '%#TabLineFill#'
-
-    return s
+function! CustomFilename()
+    let name = expand('%:t')
+    return name != '' ? name : 'unnamed'
 endfunction
 
-set tabline=%!CustomTabLine()
+function! CustomTabname(tab_num)
+    let active_window_idx = tabpagewinnr(a:tab_num) - 1
+    let active_buffer_idx = tabpagebuflist(a:tab_num)[active_window_idx]
+    let name = bufname(active_buffer_idx)
+    return name != '' ? name : 'unnamed'
+endfunction
+
+let s:palette = {
+            \ 'normal': {
+            \   'left': [['black', 'white', 'black', 'white'], ['white', 'black', 'white', 'black']],
+            \   'middle': [['none', 'none', 'none', 'none']],
+            \   'right': [['white', 'black', 'white', 'black']],
+            \ },
+            \ 'inactive': {
+            \   'left': [['white', 'black', 'white', 'black']],
+            \ },
+            \ 'tabline': {
+            \   'left': [['white', 'black', 'white', 'black']],
+            \   'tabsel': [['black', 'white', 'black', 'white']],
+            \ }}
+let g:lightline#colorscheme#nord_custom#palette = s:palette
 
 "Customize NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
-
-"Configure airline
-let g:airline_powerline_fonts = 1
-
-let g:airline_theme = 'nord2'
-
-set t_Co=256
-
-let g:airline_section_z = airline#section#create(['%l/%L', '%3v'])
-
-let g:airline_mode_map = {
-      \ '__'     : '-',
-      \ 'c'      : 'C',
-      \ 'i'      : 'I',
-      \ 'ic'     : 'I',
-      \ 'ix'     : 'I',
-      \ 'n'      : 'N',
-      \ 'multi'  : 'M',
-      \ 'ni'     : 'N',
-      \ 'no'     : 'N',
-      \ 'R'      : 'R',
-      \ 'Rv'     : 'R',
-      \ 's'      : 'S',
-      \ 'S'      : 'S',
-      \ '^S'     : 'S',
-      \ 't'      : 'T',
-      \ 'v'      : 'v',
-      \ 'V'      : 'V',
-      \ '^V'     : '^V',
-      \ }
 
 " Adjust vertical split
 highlight StatusLine ctermbg = none

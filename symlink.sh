@@ -39,7 +39,7 @@ links=(
     "tmux/tmux.conf:~/.tmux.conf"
     # Setup git
     "git/gitconfig:~/.gitconfig"
-    "git/gitignore:~/.gitignore"
+    "git/gitignore_global:~/.gitignore_global"
     # Setup zsh
     "zsh/hushlogin:~/.hushlogin"
     "zsh/zshrc:~/.zshrc")

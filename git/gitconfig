@@ -4,4 +4,4 @@
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /Users/maxbickers/.gitignore
+	excludesfile = /Users/maxbickers/.gitignore_global

@@ -2,7 +2,10 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias vim="nvim"
 alias cleantex="rm *.aux *.log"
 alias l="ls -al"
+alias tally="cd ~/Developer/tallybook; tmux"
+alias dots="cd ~/Developer/; tmux"
 
+# Setup prompt
 autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' formats '(%b) '
 

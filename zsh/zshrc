@@ -3,7 +3,7 @@ alias vim="nvim"
 alias cleantex="rm *.aux *.log"
 alias l="ls -al"
 alias tally="cd ~/Developer/tallybook; tmux"
-alias dots="cd ~/Developer/; tmux"
+alias dots="cd ~/dotfiles; tmux"
 
 # Setup prompt
 autoload -Uz vcs_info

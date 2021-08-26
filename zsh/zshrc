@@ -10,5 +10,5 @@ autoload -Uz vcs_info
 zstyle ':vcs_info:git:*' formats '(%b) '
 
 setopt prompt_subst
-precmd_functions+=(vcs_info)
+precmd_functions+=("vcs_info &> /dev/null")
 PROMPT="%3~ \${vcs_info_msg_0_}%# "

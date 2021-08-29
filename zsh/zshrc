@@ -2,8 +2,12 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias vim="nvim"
 alias cleantex="rm *.aux *.log"
 alias l="ls -al"
+
 alias tally="cd ~/Developer/tallybook; tmux"
 alias dots="cd ~/dotfiles; tmux"
+alias comb="cd ~/Documents/math565; tmux"
+alias ana="cd ~/Documents/math395; tmux"
+alias site="cd ~/Developer/personal-site; tmux"
 
 # Setup prompt
 autoload -Uz vcs_info

@@ -8,7 +8,7 @@ alias dots="cd ~/dotfiles; tmux"
 alias comb="cd ~/Documents/math565; tmux"
 alias ana="cd ~/Documents/math395; tmux"
 alias site="cd ~/Developer/personal-site; tmux"
-alias web="cd ~/Developer/eecs485-p1-static; tmux"
+alias web="tmux new -c ~/Developer/eecs485-p1-static -e USE_VENV=1"
 
 # Setup prompt
 autoload -Uz vcs_info
@@ -17,3 +17,7 @@ zstyle ':vcs_info:git:*' formats '(%b) '
 setopt prompt_subst
 precmd_functions+=("vcs_info &> /dev/null")
 PROMPT="%3~ \${vcs_info_msg_0_}%# "
+
+if [[ -n "$USE_VENV" ]]; then
+    source "env/bin/activate";
+fi

@@ -8,6 +8,7 @@ alias dots="cd ~/dotfiles; tmux"
 alias comb="cd ~/Documents/math565; tmux"
 alias ana="cd ~/Documents/math395; tmux"
 alias site="cd ~/Developer/personal-site; tmux"
+alias web="cd ~/Developer/eecs485-p1-static; tmux"
 
 # Setup prompt
 autoload -Uz vcs_info

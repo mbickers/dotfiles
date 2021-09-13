@@ -3,11 +3,10 @@ alias vim="nvim"
 alias cleantex="rm *.aux *.log"
 alias l="ls -al"
 
-alias tally="cd ~/Developer/tallybook; tmux"
-alias dots="cd ~/dotfiles; tmux"
-alias comb="cd ~/Documents/math565; tmux"
-alias ana="cd ~/Documents/math395; tmux"
-alias site="cd ~/Developer/personal-site; tmux"
+alias tally="tmux new -c ~/Developer/tallybook"
+alias dots="tmux new -c ~/dotfiles"
+alias math="tmux new -c ~/Developer/math565"
+alias site="tmux new -c ~/Developer/personal-site"
 alias web="tmux new -c ~/Developer/eecs485-p1-static -e USE_VENV=1"
 
 # Setup prompt

@@ -6,6 +6,7 @@ alias l="ls -al"
 alias tally="tmux new -c ~/Developer/tallybook"
 alias dots="tmux new -c ~/dotfiles"
 alias math="tmux new -c ~/Developer/math565"
+alias algo="tmux new -c ~/Developer/eecs477"
 alias site="tmux new -c ~/Developer/personal-site"
 alias web="tmux new -c ~/Developer/eecs485-p1-static -e USE_VENV=1"
 

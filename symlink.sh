@@ -33,6 +33,8 @@ fi
 
 # Register symlinks (source files relative to the directory of this script)
 links=(
+    # Setup sqlite
+    "sqlite/sqliterc:~/.sqliterc"
     # Setup nvim
     "vim/init.vim:~/.config/nvim/init.vim"
     # Setup tmux

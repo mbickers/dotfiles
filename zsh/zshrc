@@ -2,6 +2,7 @@ alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias vim="nvim"
 alias cleantex="rm *.aux *.log"
 alias l="ls -al"
+alias skim="open -a Skim"
 
 alias tally="tmux new -c ~/Developer/tallybook"
 alias dots="tmux new -c ~/dotfiles"

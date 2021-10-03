@@ -1,6 +1,6 @@
 alias chrome="/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome"
 alias vim="nvim"
-alias cleantex="rm *.aux *.log"
+alias cleantex="rm *.aux *.log *.out"
 alias l="ls -al"
 alias skim="open -a Skim"
 

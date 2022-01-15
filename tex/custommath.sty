@@ -1,0 +1,48 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{custom}[Max's commonly used commands]
+
+\usepackage{enumitem}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{braket}
+\usepackage[mathscr]{euscript}
+\usepackage{array}
+\usepackage{pgfplots}
+\usepackage{tensor}
+\usepackage{graphicx}
+\usepackage{bm}
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\D}{\mathbb{D}}
+
+\newcommand{\altt}{\mathrm{Alt}^2(V)}
+\newcommand{\Hom}{\mathrm{Hom}}
+\newcommand{\spn}{\mathrm{span}}
+\newcommand{\im}{\mathrm{im}}
+\newcommand{\tr}{\mathrm{tr}}
+
+\newcommand{\conj}[1]{\overline{#1}}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\p}[1]{\!\left(#1\right)}
+\renewcommand{\vec}[1]{\mathbf{#1}}
+\newcommand{\ip}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+\newtheorem*{theorem}{Theorem}
+\newtheorem*{corollary}{Corollary}
+\newtheorem*{lemma}{Lemma}
+
+\newenvironment{solution}{
+    \par \normalfont \topsep6\p@\@plus6\p@\relax
+    \trivlist
+        \item[\hskip\labelsep\itshape Solution.]\ignorespaces
+}{
+    \endtrivlist
+}

@@ -33,18 +33,15 @@ fi
 
 # Register symlinks (source files relative to the directory of this script)
 links=(
-    # Setup sqlite
     "sqlite/sqliterc:~/.sqliterc"
-    # Setup nvim
     "vim/init.vim:~/.config/nvim/init.vim"
-    # Setup tmux
     "tmux/tmux.conf:~/.tmux.conf"
-    # Setup git
     "git/gitconfig:~/.gitconfig"
     "git/gitignore_global:~/.gitignore_global"
-    # Setup zsh
     "zsh/hushlogin:~/.hushlogin"
-    "zsh/zshrc:~/.zshrc")
+    "zsh/zshrc:~/.zshrc"
+    "tex/custommath.sty:~/Library/texmf/tex/latex/local/custommath.sty"
+)
 
 # Remove symlinks
 if [[ $remove -eq 1 ]]; then

@@ -19,3 +19,6 @@ PROMPT="%3~ \${vcs_info_msg_0_}%# "
 if [[ -n "$USE_VENV" ]]; then
     source "env/bin/activate";
 fi
+
+# opam configuration
+[[ ! -r /Users/maxbickers/.opam/opam-init/init.zsh ]] || source /Users/maxbickers/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

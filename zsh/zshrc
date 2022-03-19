@@ -9,7 +9,7 @@ alias dots="tmux new -c ~/dotfiles"
 alias site="tmux new -c ~/Developer/personal-site"
 alias math="tmux new -c ~/Documents/math566"
 alias prog="tmux new -c ~/Documents/eecs490"
-alias sys="tmux new -c ~/Developer/eecs491/labs"
+alias sys="tmux new -c ~/Developer/eecs491/mbickers.4"
 
 # Setup prompt
 autoload -Uz vcs_info

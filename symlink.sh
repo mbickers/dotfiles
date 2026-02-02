@@ -34,13 +34,9 @@ fi
 # Register symlinks (source files relative to the directory of this script)
 links=(
     "sqlite/sqliterc:~/.sqliterc"
-    "vim/init.vim:~/.config/nvim/init.vim"
-    "tmux/tmux.conf:~/.tmux.conf"
     "git/gitconfig:~/.gitconfig"
-    "git/gitignore_global:~/.gitignore_global"
     "zsh/hushlogin:~/.hushlogin"
-    "zsh/zshrc:~/.zshrc"
-    "tex/custommath.sty:~/Library/texmf/tex/latex/local/custommath.sty"
+    "agents/agents.md:~/.claude/CLAUDE.md"
 )
 
 # Remove symlinks

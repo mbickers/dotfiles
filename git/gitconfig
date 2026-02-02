@@ -1,8 +1,7 @@
 [user]
-	email = mbickers@umich.edu
+	email = mbickers@fastmail.com
 	name = Max Bickers
 [init]
 	defaultBranch = main
 [core]
-	excludesfile = /Users/maxbickers/.gitignore_global
-	editor = nvim
+	excludesfile = ~/dotfiles/git/gitignore_global

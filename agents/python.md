@@ -1,3 +1,4 @@
 - ``dict.get`` usually indicates bad control flow. How could we guarantee that a key is in the dictionary?
 - always use mandatory keyword arguments if the purpose and order of positional argument wouldn't be obvious at call site
 - always use kw_only for dataclasses
+- variable names should be lower camel case. If I wrote code that doesn't follow this, point it out.

@@ -37,6 +37,7 @@ links=(
     "git/gitconfig:~/.gitconfig"
     "zsh/hushlogin:~/.hushlogin"
     "agents/agents.md:~/.claude/CLAUDE.md"
+    "agents/claude-settings.json:~/.claude/settings.json"
 )
 
 # Remove symlinks

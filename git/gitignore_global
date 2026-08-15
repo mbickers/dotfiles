@@ -1,3 +1,8 @@
 .DS_Store
 xcuserdata/
 .claude
+
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.sw?

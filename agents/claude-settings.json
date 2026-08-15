@@ -3,5 +3,10 @@
     "allow": [
       "Read(~/dotfiles/agents/**)"
     ]
+  },
+  "model": "opus",
+  "tui": "fullscreen",
+  "enabledPlugins": {
+    "swift-lsp@claude-plugins-official": true
   }
 }

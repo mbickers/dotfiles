@@ -1,1 +1,0 @@
-- Never have MARK or PRAGMA comments

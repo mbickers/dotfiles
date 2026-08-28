@@ -5,8 +5,23 @@
     ]
   },
   "model": "opus",
-  "tui": "fullscreen",
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
+  },
+  "tui": "fullscreen",
+  "agentPushNotifEnabled": true,
+  "effortLevel": "medium",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/dotfiles/agents/rename_branch.sh\"",
+            "statusMessage": "Checking branch name"
+          }
+        ]
+      }
+    ]
   }
 }

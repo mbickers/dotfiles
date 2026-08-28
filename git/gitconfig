@@ -9,3 +9,5 @@
 	ff = false
 [pull]
 	ff = only
+[alias]
+	branchdiff = !git diff $(git merge-base main HEAD)

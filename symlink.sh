@@ -36,6 +36,7 @@ links=(
     "sqlite/sqliterc:~/.sqliterc"
     "git/gitconfig:~/.gitconfig"
     "zsh/hushlogin:~/.hushlogin"
+    "zsh/zshrc:~/.zshrc"
     "agents/agents.md:~/.claude/CLAUDE.md"
     "agents/agents.md:~/.codex/AGENTS.md"
     "agents/claude-settings.json:~/.claude/settings.json"

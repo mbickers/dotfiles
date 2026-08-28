@@ -2,8 +2,8 @@
 [ -f "/Users/max/.ghcup/env" ] && source "/Users/max/.ghcup/env" # ghcup-env
 PATH=$PATH:~/.local/bin:/opt/homebrew/bin
 
-alias l=ls -l
-alias la=ls -la
+alias l='ls -l'
+alias la='ls -la'
 
 HISTFILE="$HOME/.zsh_history"
 HISTSIZE=10000000
@@ -22,23 +22,7 @@ setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording en
 setopt HIST_VERIFY               # Don't execute immediately upon history expansion.
 setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-autoload -U add-zsh-hook
-
-load_nvmrc() {
-  local nvmrc
-  nvmrc="$(nvm_find_nvmrc)"
-
-  if [[ -n "$nvmrc" ]]; then
-    nvm use --silent
-  fi
-}
-
-add-zsh-hook chpwd load_nvmrc
-load_nvmrc
+eval "$(mise activate zsh)"
 
 # pnpm
 export PNPM_HOME="/Users/max/Library/pnpm"

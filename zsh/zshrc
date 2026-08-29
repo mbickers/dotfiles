@@ -33,14 +33,18 @@ esac
 # pnpm end
 
 j() {
-  local output query selection
-  output=$(git worktree list | fzf --print-query)
-  query=${output%%$'\n'*}
-  if [[ $output == *$'\n'* ]]; then
-    selection=${output#*$'\n'}
+  local selection
+  selection=$({ git worktree list; echo "new branch" } | fzf)
+  [[ -z $selection ]] && return
+  if [[ $selection != "new branch" ]]; then
     cd ${selection%% *}
-  elif [[ -n $query ]]; then
-    local worktree="$(git worktree list | head -1 | awk '{print $1}')/.worktrees/$query"
-    git worktree add -b $query $worktree && cd $worktree
+    return
   fi
+  local branch base worktree
+  read "branch?branch name: "
+  [[ -z $branch ]] && return
+  base=$(printf '%s\n' "$(git branch --show-current)" main | fzf --prompt='base branch> ')
+  [[ -z $base ]] && return
+  worktree="$(git worktree list | head -1 | awk '{print $1}')/.worktrees/$branch"
+  git worktree add -b $branch $worktree $base && cd $worktree
 }

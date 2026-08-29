@@ -25,7 +25,18 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 eval "$(mise activate zsh)"
 
 j() {
-  local worktree
-  worktree=$(git worktree list | fzf | awk '{print $1}')
-  [[ -n $worktree ]] && cd $worktree
+  local selection
+  selection=$({ git worktree list; echo "new branch" } | fzf)
+  [[ -z $selection ]] && return
+  if [[ $selection != "new branch" ]]; then
+    cd ${selection%% *}
+    return
+  fi
+  local branch base worktree
+  read "branch?branch name: "
+  [[ -z $branch ]] && return
+  base=$(printf '%s\n' "$(git branch --show-current)" main | fzf --prompt='base branch> ')
+  [[ -z $base ]] && return
+  worktree="$(git worktree list | head -1 | awk '{print $1}')/.worktrees/$branch"
+  git worktree add -b $branch $worktree $base && cd $worktree
 }

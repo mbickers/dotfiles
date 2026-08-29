@@ -24,14 +24,6 @@ setopt HIST_BEEP                 # Beep when accessing nonexistent history.
 
 eval "$(mise activate zsh)"
 
-# pnpm
-export PNPM_HOME="/Users/max/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
 j() {
   local worktree
   worktree=$(git worktree list | fzf | awk '{print $1}')

@@ -40,6 +40,7 @@ links=(
     "agents/agents.md:~/.claude/CLAUDE.md"
     "agents/agents.md:~/.codex/AGENTS.md"
     "agents/claude-settings.json:~/.claude/settings.json"
+    "karabiner/browser_back_forward.json:~/.config/karabiner/assets/complex_modifications/browser_back_forward.json"
 )
 
 # Remove symlinks

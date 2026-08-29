@@ -1,0 +1,42 @@
+{
+    "title": "Browser back/forward keys (HID AC Back / AC Forward)",
+    "rules": [
+        {
+            "description": "AC Back / AC Forward navigate back and forward",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": { "consumer_key_code": "ac_back" },
+                    "to": [{ "key_code": "hyphen", "modifiers": ["left_control"] }],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": { "consumer_key_code": "ac_forward" },
+                    "to": [{ "key_code": "hyphen", "modifiers": ["left_control", "left_shift"] }],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": ["^com\\.microsoft\\.VSCode$"]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": { "consumer_key_code": "ac_back" },
+                    "to": [{ "key_code": "open_bracket", "modifiers": ["left_command"] }]
+                },
+                {
+                    "type": "basic",
+                    "from": { "consumer_key_code": "ac_forward" },
+                    "to": [{ "key_code": "close_bracket", "modifiers": ["left_command"] }]
+                }
+            ]
+        }
+    ]
+}

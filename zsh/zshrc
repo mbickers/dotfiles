@@ -33,7 +33,14 @@ esac
 # pnpm end
 
 j() {
-  local worktree
-  worktree=$(git worktree list | fzf | awk '{print $1}')
-  [[ -n $worktree ]] && cd $worktree
+  local output query selection
+  output=$(git worktree list | fzf --print-query)
+  query=${output%%$'\n'*}
+  if [[ $output == *$'\n'* ]]; then
+    selection=${output#*$'\n'}
+    cd ${selection%% *}
+  elif [[ -n $query ]]; then
+    local worktree="$(git worktree list | head -1 | awk '{print $1}')/.worktrees/$query"
+    git worktree add -b $query $worktree && cd $worktree
+  fi
 }

@@ -4,6 +4,7 @@
       "Read(~/dotfiles/agents/**)"
     ]
   },
+  "includeCoAuthoredBy": false,
   "model": "opus",
   "enabledPlugins": {
     "swift-lsp@claude-plugins-official": true
